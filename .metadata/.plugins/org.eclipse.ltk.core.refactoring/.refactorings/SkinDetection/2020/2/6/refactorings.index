@@ -1,0 +1,4 @@
+1580679175267	Rename package 'imageTesting'
+1580679327709	Rename local variable 'skin'
+1580679410858	Rename local variable 'probabilityOfSkinGivenRGB'
+1580679434321	Rename local variable 'probabilityOfNonSkinGivenRGB'

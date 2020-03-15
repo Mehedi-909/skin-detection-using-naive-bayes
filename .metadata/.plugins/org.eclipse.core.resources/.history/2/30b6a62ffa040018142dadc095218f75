@@ -1,0 +1,48 @@
+package imageTesting;
+
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+public class Final {
+
+	public static void main(String[] args) {
+		int imageFileNumber = 1;
+		
+
+		while (imageFileNumber <= 1) {
+
+			File file = new File("image/image (1).jpg");
+	        BufferedImage img = null;
+			try {
+				img = ImageIO.read(file);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				break;
+			}
+	        int width = img.getWidth();
+	        int height = img.getHeight();
+	        int[][] pixel = new int[width][height];
+	        Raster raster = img.getData();
+	        for (int i = 0; i < width; i++) {
+	            for (int j = 0; j < height; j++) {
+	                pixel[i][j] = raster.getSample(i, j, 0);
+	                
+	                Color c = new Color(img.getRGB(i, j));
+	                System.out.println();
+	            }
+	        }
+	        
+	        
+	        imageFileNumber++;
+
+		}
+
+	}
+
+}
